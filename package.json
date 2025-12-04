@@ -1,6 +1,6 @@
 {
   "name": "fun-error",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Node.js error messages that roast you while actually helping you fix bugs",
   "main": "index.js",
   "bin": {
