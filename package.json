@@ -1,0 +1,36 @@
+{
+  "name": "funerr",
+  "version": "1.0.0",
+  "description": "Node.js error messages that roast you while actually helping you fix bugs",
+  "main": "index.js",
+  "bin": {
+    "funerr": "./bin/funerr.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "error",
+    "debugging",
+    "node",
+    "cli",
+    "funny",
+    "developer-tools",
+    "error-handling",
+    "nodejs",
+    "terminal"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/funerr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/funerr/issues"
+  },
+  "homepage": "https://github.com/yourusername/funerr#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
