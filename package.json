@@ -6,9 +6,6 @@
   "bin": {
     "funerr": "./index.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "error",
     "debugging",
@@ -20,7 +17,7 @@
     "nodejs",
     "terminal"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Mohammed Yaseen <mohammedyaseen.ind@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
