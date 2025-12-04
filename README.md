@@ -134,6 +134,7 @@ Got a new error that made you cry? Found a way to roast developers even harder?
 
 1.  Fork the repo.
 2.  Submit a PR.
+3.  Wait!
 
 ## 📄 License
 
