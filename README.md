@@ -1,4 +1,4 @@
-# 🔥 FunErr
+# 🔥 Fun-Error
 ### Error Messages That Hurt Your Feelings But Fix Your Code.
 
 ---
@@ -20,7 +20,7 @@ Coding should be fun. It should be creative. And when you mess up (which you wil
 You can install it globally to use it anywhere:
 
 ```bash
-npm install -g funerr
+npm install -g fun-error
 ````
 
 Or run it directly with `npx`:
