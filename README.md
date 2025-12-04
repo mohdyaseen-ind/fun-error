@@ -1,20 +1,5 @@
-Here is a punchy, attention-grabbing `README.md` for your npm package. It captures your backstory, highlights the "Emotional Damage" feature, and showcases the technical capabilities in a fun way.
-
------
-
-# 📦 README.md
-
-````markdown
-<div align="center">
-
 # 🔥 FunErr
 ### Error Messages That Hurt Your Feelings But Fix Your Code.
-
-[![npm version](https://img.shields.io/npm/v/funerr.svg?style=flat-square)](https://www.npmjs.com/package/funerr)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Emotional Damage](https://img.shields.io/badge/Emotional%20Damage-CRITICAL-red)](https://www.youtube.com/watch?v=i1jqJDdY1Bc)
-
-</div>
 
 ---
 
