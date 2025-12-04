@@ -133,7 +133,7 @@ FunErr doesn't just read the error name. It uses a **Pattern Detector** to analy
 Got a new error that made you cry? Found a way to roast developers even harder?
 
 1.  Fork the repo.
-3.  Submit a PR.
+2.  Submit a PR.
 
 ## 📄 License
 
