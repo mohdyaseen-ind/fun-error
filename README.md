@@ -133,7 +133,6 @@ FunErr doesn't just read the error name. It uses a **Pattern Detector** to analy
 Got a new error that made you cry? Found a way to roast developers even harder?
 
 1.  Fork the repo.
-2.  Add your pattern to the `roastDB`.
 3.  Submit a PR.
 
 ## 📄 License
