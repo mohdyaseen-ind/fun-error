@@ -32,5 +32,8 @@
   "homepage": "https://github.com/yourusername/funerr#readme",
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "fun-error": "^1.0.1"
   }
 }
