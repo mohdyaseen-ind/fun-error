@@ -1,78 +1,113 @@
-# 🔥 Fun-Error
-### Error Messages That Hurt Your Feelings But Fix Your Code.
+# 🔥 FunErr
+
+**Intelligent Node.js error wrapper with pattern detection and helpful debugging hints**
+
+**Features** • **Installation** • **Usage** • **Error Coverage** • **Contributing**
 
 ---
 
-## 📖 The Story: Why I Built This
+## 📋 Overview
 
-I was tired. 
+FunErr is an enhanced error reporting tool for Node.js that transforms cryptic stack traces into actionable debugging information. By analyzing error patterns and context, it provides:
 
-Tired of staring at `undefined is not a function`. Tired of asking my teachers what a stack trace meant, only to get a sigh and a "read the console" in response. Tired of development feeling like a sterile, painful chore.
+- **Pattern Recognition**: Detects 80+ specific error scenarios
+- **Contextual Hints**: Offers practical solutions for each error type
+- **Enhanced Formatting**: Clear, color-coded terminal output
+- **Zero Configuration**: Drop-in replacement for the `node` command
 
-Coding should be fun. It should be creative. And when you mess up (which you will), it shouldn't just crash silently—it should roast you, teach you, and make you laugh through the pain.
+## ✨ Features
 
-**FunErr** turns your terminal into a savage coding partner. It doesn't just show errors; it detects **40+ specific failure patterns**, insults your coding skills, and then actually tells you how to fix it.
+### Intelligent Error Detection
+FunErr doesn't just display errors—it understands them. The pattern detection engine identifies specific failure modes across multiple categories:
 
----
+- **Async/Promise Operations**: Unhandled rejections, missing await, double resolution
+- **Module System**: Import/export issues, ESM vs CommonJS conflicts
+- **Type Errors**: Undefined properties, null references, type mismatches
+- **Network & I/O**: Connection failures, file system errors, permission issues
+- **Syntax & Parsing**: Token errors, JSON parsing, regex validation
+- **Database Operations**: Connection errors, query failures, constraint violations
+- **Memory & Performance**: Stack overflows, memory leaks, buffer errors
 
-## 🚀 Installation
+### Clear, Actionable Output
+Each error includes:
+- **Error Type & Message**: What went wrong
+- **Location**: File, line, and column number
+- **Context**: Code snippet where available
+- **Solution**: Specific fix recommendations
+- **System Code**: For system-level errors (ENOENT, EADDRINUSE, etc.)
 
-You can install it globally to use it anywhere:
+## 📦 Installation
 
+### Global Installation (Recommended)
 ```bash
 npm install -g fun-error
-````
-
-Or run it directly with `npx`:
-
-```bash
-npx funerr index.js
 ```
 
------
+### Local Installation
+```bash
+npm install --save-dev fun-error
+```
 
-## 🎮 Usage
+### Using npx
+```bash
+npx fun-error your-script.js
+```
+Note: npx will download and cache the package on first use.
 
-Stop running `node index.js`. Start running:
+## 🚀 Usage
+
+### Basic Usage
+Replace `node` with `funerr` in your command:
 
 ```bash
+# Standard Node.js
+node index.js
+
+# With FunErr
 funerr index.js
 ```
 
-Works with arguments too:
+### With Arguments
+All Node.js arguments and script parameters are supported:
 
 ```bash
 funerr server.js --port 3000
+funerr test.js --verbose --config ./config.json
 ```
 
------
+### In package.json Scripts
+```json
+{
+  "scripts": {
+    "dev": "funerr server.js",
+    "test": "funerr test/runner.js"
+  }
+}
+```
 
-## ⚡ What Does It Look Like?
+## 📊 Output Comparison
 
-### ❌ The Boring Way (Standard Node)
-
-```text
-/Users/dev/project/app.js:14
+### Standard Node.js Error
+```
+/Users/developer/project/app.js:14
     await fetchData();
     ^^^^^
-SyntaxError: await is only valid in async functions
+SyntaxError: await is only valid in async functions and the top level bodies of modules
     at Object.compileFunction (node:vm:360:18)
     at wrapSafe (node:internal/modules/cjs/loader:1088:15)
+    at Module._compile (node:internal/modules/cjs/loader:1123:27)
 ```
 
-### ✅ The FunErr Way (Emotional Damage Mode)
-
-```text
+### FunErr Enhanced Output
+```
  🔥 EMOTIONAL DAMAGE 🔥 
 ╔════════════════════════════════════════════════════════════════╗
 ║  SYNTAXERROR                                                   ║
 ╚════════════════════════════════════════════════════════════════╝
 
-📍 Crime Scene: app.js:14
-
-📝 What Broke: "await is only valid in async functions"
-
-⚙️  Error Code: SYNTAX_ERROR (Google this if you're brave)
+📍 Crime Scene: app.js:14:5
+📝 What Broke:   "await is only valid in async functions"
+📄 The Evidence: await fetchData();...
 
 ─────────────────────────────────────────────────────────────────
 ⏳  THE ROAST:
@@ -83,62 +118,166 @@ SyntaxError: await is only valid in async functions
 
 ─────────────────────────────────────────────────────────────────
 💡 HOW TO FIX (if you're capable):
-   Wrap your code in: async function() { ... } or make the parent function async.
+   Wrap your code in: async function() { ... } or make the parent 
+   function async.
 
 ┌────────────────────────────────────────────────────────────┐
-│ This error was 100% preventable. You know that, right?     │
+│ This error was 100% preventable. You know that, right?   │
+│ Want the boring Node error? Remove 'funerr' like a coward │
 └────────────────────────────────────────────────────────────┘
 ```
 
------
+## 🎯 Error Coverage
 
-## 🧠 The Brains (It's not just random insults)
+FunErr recognizes and provides specialized handling for 80+ error patterns:
 
-FunErr doesn't just read the error name. It uses a **Pattern Detector** to analyze the context of your crash. It currently supports **40+ specific scenarios**, including:
+### Async & Promises (6 patterns)
+- Unhandled Promise Rejections
+- await outside async context
+- Missing await on async calls
+- Double resolution attempts
+- Missing catch handlers
+- .then() on non-Promises
 
-### 💀 Async & Promises
+### Module System (7 patterns)
+- MODULE_NOT_FOUND errors
+- ESM vs CommonJS conflicts
+- Import outside module context
+- Missing/incorrect exports
+- Named export not found
+- Default export issues
 
-  * **Ghosting:** Unhandled Promise Rejections.
-  * **Time Travel:** Using `await` outside async.
-  * **The Amnesiac:** Calling async functions without `await`.
+### Type Errors (12 patterns)
+- Undefined/null property access
+- Not a function errors
+- Not iterable errors
+- Not a constructor errors
+- Const reassignment
+- Type conversion failures
+- Reduce on empty arrays
+- Frozen/sealed objects
+- Circular JSON structures
 
-### 📦 Modules & Imports
+### Network & I/O (13 patterns)
+- EADDRINUSE (port in use)
+- ENOENT (file not found)
+- ECONNREFUSED (connection refused)
+- ETIMEDOUT (timeout)
+- EACCES/EPERM (permission denied)
+- EISDIR/ENOTDIR (file/directory confusion)
+- DNS resolution failures
+- Socket errors
+- Stream errors
 
-  * **The Faker:** Importing modules you never installed (`MODULE_NOT_FOUND`).
-  * **The Boomer:** Using `require` in ES Modules.
-  * **The Fraud:** Exporting variables that don't exist.
+### Syntax Errors (10 patterns)
+- Unexpected tokens
+- Missing brackets/parentheses
+- Unexpected EOF
+- Reserved word usage
+- Strict mode violations
+- Invalid destructuring
+- Illegal return statements
 
-### 🚫 Types & Nulls
+### Database Errors (6 patterns)
+- Connection failures (MongoDB, PostgreSQL)
+- Duplicate key violations
+- Table/column not found
+- SQL syntax errors
 
-  * **The Void:** Trying to read properties of `null` or `undefined`.
-  * **The Imposter:** Calling something that isn't a function.
-  * **The Stubborn:** Trying to reassign a `const`.
+### Memory & Performance (3 patterns)
+- Stack overflow (infinite recursion)
+- Out of memory errors
+- Fatal errors
 
-### 🌐 Network & Systems
+### Additional Categories
+- JSON parsing errors
+- Regular expression errors
+- Buffer & encoding errors
+- Crypto/security errors
+- Worker/thread errors
+- Stream errors
+- Assertion failures
 
-  * **The Squatter:** `EADDRINUSE` (Port already in use).
-  * **The Ghost:** `ENOENT` (File doesn't exist).
-  * **The Rejection:** `ECONNREFUSED` (Database/Server down).
-
-### 🍝 Syntax Spaghetti
-
-  * **The Dropout:** Missing parentheses, brackets, or braces.
-  * **The Typo:** Unexpected tokens.
-  * **The Mess:** Malformed JSON parsing.
-
------
+**Total: 80+ error patterns recognized and handled**
 
 ## 🤝 Contributing
 
-Got a new error that made you cry? Found a way to roast developers even harder?
+Contributions are welcome! Here's how you can help:
 
-1.  Fork the repo.
-2.  Submit a PR.
-3.  Wait!
+### Adding New Error Patterns
+
+1. **Identify the Error**: Find a Node.js error that needs better handling
+2. **Add Pattern Detection**: Update `detectPattern()` in the source
+3. **Create Roast Entry**: Add helpful message and fix instructions
+4. **Test**: Verify detection works correctly
+5. **Submit PR**: Include example error and test case
+
+### Contribution Guidelines
+
+- Follow existing code style
+- Add tests for new patterns
+- Update documentation
+- Keep error messages helpful and constructive
+- Ensure backwards compatibility
+
+### Example Contribution
+```javascript
+// In detectPattern()
+if (msg.includes("your new error pattern")) {
+  return "your_error_key";
+}
+
+// In getRoastAndHint()
+your_error_key: {
+  emoji: "🔥",
+  roast: "Clear explanation of what went wrong",
+  hint: "Specific steps to fix the issue",
+  extraBurn: "Optional additional context"
+}
+```
+
+## 📝 Changelog
+
+### Version 2.0.0 (Latest)
+- Expanded from 40+ to 80+ error patterns
+- Added worker/thread error detection
+- Added stream error handling
+- Added crypto/security error patterns
+- Improved location parsing accuracy
+- Enhanced documentation
+
+### Version 1.0.0
+- Initial release
+- 40+ error pattern detection
+- Color-coded terminal output
+- Source location tracking
 
 ## 📄 License
 
-MIT. Do whatever you want with it. Just don't blame me when your ego gets bruised.
+MIT License - see [LICENSE](LICENSE) file for details
 
-```
-```
+## 🙏 Acknowledgments
+
+- Inspired by the need for better developer experience in Node.js debugging
+- Built with frustration, caffeine, and a desire to make error messages useful
+- Thanks to all contributors and users who provided feedback
+
+## 📞 Support
+
+- Bug Reports: GitHub Issues
+- Feature Requests: GitHub Discussions  
+- Email: your.email@example.com
+
+## ⭐ Show Your Support
+
+If FunErr helps you debug faster, consider:
+- Starring the repository
+- Sharing on social media
+- Writing about your experience
+- Contributing to the project
+
+---
+
+**Made with 🔥 by Mohammed Yaseen**
+
+*Because error messages should be helpful, not hostile*
