@@ -19,6 +19,52 @@ Stop googling error messages. Start fixing bugs faster.
 - Shows you how to fix it
 - Roasts your code (in a helpful way)
 
+## 🔥 Why Use FunErr?
+
+### The Boring Way (Normal Node.js)
+```
+/Users/dev/project/app.js:14
+    await fetchData();
+    ^^^^^
+SyntaxError: await is only valid in async functions and the top level bodies of modules
+    at Object.compileFunction (node:vm:360:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1088:15)
+    at Module._compile (node:internal/modules/cjs/loader:1123:27)
+```
+
+**Your reaction:** "What does this even mean??" 😭
+
+### The FunErr Way
+```
+ 🔥 EMOTIONAL DAMAGE 🔥 
+╔════════════════════════════════════════════════════════════════╗
+║  SYNTAXERROR                                                   ║
+╚════════════════════════════════════════════════════════════════╝
+
+📍 Crime Scene: app.js:14:5
+📝 What Broke:   "await is only valid in async functions"
+📄 The Evidence: await fetchData();...
+
+─────────────────────────────────────────────────────────────────
+⏳  THE ROAST:
+   You used 'await' outside an async function. Time doesn't work 
+   like that, Einstein.
+
+   await requires async context. This is JavaScript, not wish.com magic.
+
+─────────────────────────────────────────────────────────────────
+💡 HOW TO FIX (if you're capable):
+   Wrap your code in: async function() { ... } or make the parent 
+   function async.
+
+┌────────────────────────────────────────────────────────────┐
+│ This error was 100% preventable. You know that, right?   │
+│ Want the boring Node error? Remove 'funerr' like a coward │
+└────────────────────────────────────────────────────────────┘
+```
+
+**Your reaction:** "Ah, I need to make it async. Got it!" ✅
+
 ## 📦 Installation
 
 ### Global Installation (Recommended)
@@ -221,7 +267,7 @@ your_error_key: {
 
 ## 📝 Changelog
 
-### Version 2.0.0 (Latest)
+### Version 1.0.13 (Latest)
 - Expanded from 40+ to 80+ error patterns
 - Added worker/thread error detection
 - Added stream error handling
@@ -247,9 +293,10 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## 📞 Support
 
+- GitHub: https://github.com/mohdyaseen-ind/fun-error
 - Bug Reports: GitHub Issues
 - Feature Requests: GitHub Discussions  
-- Email: your.email@example.com
+- Email: mohdyaseenind@gmail.com
 
 ## ⭐ Show Your Support
 
