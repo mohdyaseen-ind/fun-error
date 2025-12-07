@@ -8,33 +8,16 @@
 
 ## 📋 Overview
 
-FunErr is an enhanced error reporting tool for Node.js that transforms cryptic stack traces into actionable debugging information. By analyzing error patterns and context, it provides:
+FunErr turns confusing Node.js errors into clear, helpful messages. When your code breaks, it tells you exactly what went wrong and how to fix it—with a roast thrown in for good measure.
 
-- **Pattern Recognition**: Detects 80+ specific error scenarios
-- **Contextual Hints**: Offers practical solutions for each error type
-- **Enhanced Formatting**: Clear, color-coded terminal output
-- **Zero Configuration**: Drop-in replacement for the `node` command
+Stop googling error messages. Start fixing bugs faster.
 
-## ✨ Features
+## ✨ What It Does
 
-### Intelligent Error Detection
-FunErr doesn't just display errors—it understands them. The pattern detection engine identifies specific failure modes across multiple categories:
-
-- **Async/Promise Operations**: Unhandled rejections, missing await, double resolution
-- **Module System**: Import/export issues, ESM vs CommonJS conflicts
-- **Type Errors**: Undefined properties, null references, type mismatches
-- **Network & I/O**: Connection failures, file system errors, permission issues
-- **Syntax & Parsing**: Token errors, JSON parsing, regex validation
-- **Database Operations**: Connection errors, query failures, constraint violations
-- **Memory & Performance**: Stack overflows, memory leaks, buffer errors
-
-### Clear, Actionable Output
-Each error includes:
-- **Error Type & Message**: What went wrong
-- **Location**: File, line, and column number
-- **Context**: Code snippet where available
-- **Solution**: Specific fix recommendations
-- **System Code**: For system-level errors (ENOENT, EADDRINUSE, etc.)
+- Detects 80+ common Node.js errors
+- Explains what actually broke
+- Shows you how to fix it
+- Roasts your code (in a helpful way)
 
 ## 📦 Installation
 
