@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FunErr - Emotional Damage for Your Code</title>
     <meta name="google-site-verification" content="agYN6xicllZr2tbSve5_4s749RxIBSE0td6sHYej7eA" />
+    <meta name="description"
+        content="FunErr: The savage Node.js error wrapper that roasts your code while helping you fix bugs. Detects 80+ patterns and provides instant debugging hints." />
+    <meta name="keywords"
+        content="node.js, error handling, debugging, developer tools, cli, funny errors, programming roast" />
+
+    <!-- Structured Data for AI Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "FunErr",
+      "description": "An intelligent Node.js error wrapper that roasts your code while actually helping you fix bugs. It detects 80+ common error patterns and provides SAVAGE debugging hints.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS, Windows",
+      "url": "https://mohdyaseen-ind.github.io/fun-error/",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammed Yaseen"
+      },
+      "license": "https://opensource.org/licenses/MIT",
+      "softwareVersion": "1.0.12"
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -24,13 +49,16 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #0f172a;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #334155;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #ef4444;
         }
@@ -42,12 +70,29 @@
         }
 
         @keyframes glitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 2px) }
-            40% { transform: translate(-2px, -2px) }
-            60% { transform: translate(2px, 2px) }
-            80% { transform: translate(2px, -2px) }
-            100% { transform: translate(0) }
+            0% {
+                transform: translate(0)
+            }
+
+            20% {
+                transform: translate(-2px, 2px)
+            }
+
+            40% {
+                transform: translate(-2px, -2px)
+            }
+
+            60% {
+                transform: translate(2px, 2px)
+            }
+
+            80% {
+                transform: translate(2px, -2px)
+            }
+
+            100% {
+                transform: translate(0)
+            }
         }
 
         /* Terminal Cursor Blink */
@@ -61,8 +106,15 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         .blob {
@@ -73,6 +125,7 @@
         }
     </style>
 </head>
+
 <body class="overflow-x-hidden selection:bg-red-500 selection:text-white">
 
     <!-- Background Glows -->
@@ -85,10 +138,12 @@
             <span class="text-red-500 text-3xl">🔥</span> FunErr
         </div>
         <div class="flex gap-4 items-center">
-            <a href="https://www.npmjs.com/package/fun-error" target="_blank" class="text-slate-400 hover:text-red-500 transition-colors" title="View on NPM">
+            <a href="https://www.npmjs.com/package/fun-error" target="_blank"
+                class="text-slate-400 hover:text-red-500 transition-colors" title="View on NPM">
                 <i data-lucide="box" class="w-6 h-6"></i>
             </a>
-            <a href="https://github.com/mohdyaseen-ind/fun-error" target="_blank" class="text-slate-400 hover:text-white transition-colors" title="View on GitHub">
+            <a href="https://github.com/mohdyaseen-ind/fun-error" target="_blank"
+                class="text-slate-400 hover:text-white transition-colors" title="View on GitHub">
                 <i data-lucide="github" class="w-6 h-6"></i>
             </a>
         </div>
@@ -96,31 +151,39 @@
 
     <!-- Hero Section -->
     <section class="container mx-auto px-6 py-12 md:py-24 text-center relative z-10">
-        <div class="inline-block px-4 py-1 mb-6 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 text-sm font-semibold tracking-wide uppercase">
+        <div
+            class="inline-block px-4 py-1 mb-6 rounded-full border border-red-500/30 bg-red-500/10 text-red-400 text-sm font-semibold tracking-wide uppercase">
             v1.0.10 • Emotional Damage Mode
         </div>
-        
+
         <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Error Messages That <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 glitch-hover cursor-default">Hurt Your Feelings.</span>
+            <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 glitch-hover cursor-default">Hurt
+                Your Feelings.</span>
         </h1>
-        
+
         <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-            Tired of boring standard errors? Get roasted instead. 
+            Tired of boring standard errors? Get roasted instead.
             FunErr turns your terminal into a savage coding partner that fixes your code while destroying your ego.
         </p>
 
         <!-- The Command Box -->
         <div class="max-w-xl mx-auto relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div class="relative flex items-center justify-between bg-black border border-slate-800 rounded-lg p-4 font-mono text-left shadow-2xl">
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-red-600 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200">
+            </div>
+            <div
+                class="relative flex items-center justify-between bg-black border border-slate-800 rounded-lg p-4 font-mono text-left shadow-2xl">
                 <div class="flex items-center gap-3 overflow-x-auto">
                     <span class="text-green-500 font-bold">$</span>
                     <span class="text-slate-200" id="cmd-text">npm i -g fun-error</span>
                 </div>
-                <button onclick="copyCommand()" class="ml-4 text-slate-400 hover:text-white transition-colors p-2 rounded hover:bg-slate-800 relative group/btn">
+                <button onclick="copyCommand()"
+                    class="ml-4 text-slate-400 hover:text-white transition-colors p-2 rounded hover:bg-slate-800 relative group/btn">
                     <i data-lucide="copy" class="w-5 h-5" id="copy-icon"></i>
-                    <span id="copy-tooltip" class="absolute -top-8 left-1/2 -translate-x-1/2 bg-red-500 text-white text-xs py-1 px-2 rounded opacity-0 transition-opacity">Copy</span>
+                    <span id="copy-tooltip"
+                        class="absolute -top-8 left-1/2 -translate-x-1/2 bg-red-500 text-white text-xs py-1 px-2 rounded opacity-0 transition-opacity">Copy</span>
                 </button>
             </div>
             <p class="text-slate-500 text-sm mt-3">Requires Node.js • Thick skin recommended</p>
@@ -144,20 +207,23 @@
                     <span class="text-blue-400 font-bold">~</span>
                     <span class="text-slate-300">fun-error app.js</span>
                 </div>
-                
+
                 <!-- The Output -->
                 <div class="animate-pulse-slow">
-                    <div class="bg-red-900/30 text-red-500 font-bold p-1 mb-2 inline-block">🔥 EMOTIONAL DAMAGE MODE 🔥</div>
-                    
+                    <div class="bg-red-900/30 text-red-500 font-bold p-1 mb-2 inline-block">🔥 EMOTIONAL DAMAGE MODE 🔥
+                    </div>
+
                     <div class="text-red-500 font-bold">╔════════════════════════════════════╗</div>
-                    <div class="text-red-500 font-bold">║  REFERENCE_ERROR                   ║</div>
+                    <div class="text-red-500 font-bold">║ REFERENCE_ERROR ║</div>
                     <div class="text-red-500 font-bold">╚════════════════════════════════════╝</div>
-                    
+
                     <div class="mt-4">
-                        <span class="text-purple-400">📍 Crime Scene:</span> <span class="text-slate-200">app.js:42</span>
+                        <span class="text-purple-400">📍 Crime Scene:</span> <span
+                            class="text-slate-200">app.js:42</span>
                     </div>
                     <div>
-                        <span class="text-purple-400">📝 What Broke:</span> <span class="text-yellow-400">"user is not defined"</span>
+                        <span class="text-purple-400">📝 What Broke:</span> <span class="text-yellow-400">"user is not
+                            defined"</span>
                     </div>
 
                     <div class="my-4 border-t border-red-900/50"></div>
@@ -175,7 +241,7 @@
                         Define variables before using them. const/let/var.<br>
                         Pick one, wizard.
                     </div>
-                    
+
                     <div class="mt-4">
                         <span class="text-green-500 font-bold">➜</span>
                         <span class="text-blue-400 font-bold">~</span>
@@ -190,19 +256,21 @@
     <section class="container mx-auto px-6 py-20 relative">
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Born From Frustration. <br><span class="text-red-500">Built For Fun.</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Born From Frustration. <br><span
+                        class="text-red-500">Built For Fun.</span></h2>
                 <div class="space-y-4 text-slate-300 text-lg leading-relaxed">
                     <p>
-                        I remember sitting in class, staring at a wall of red text. My teacher would walk by, sigh, and say, 
+                        I remember sitting in class, staring at a wall of red text. My teacher would walk by, sigh, and
+                        say,
                         <span class="italic text-white">"Just read the error."</span>
                     </p>
                     <p>
                         But standard errors are boring. They're robotic. They don't motivate you.
                     </p>
                     <p>
-                        I realized development shouldn't be a pain in the ass—it should be an adventure. 
-                        So I built <span class="text-red-400 font-bold">FunErr</span>. 
-                        It takes the 80+ most common mistakes we all make, identifies them instantly, 
+                        I realized development shouldn't be a pain in the ass—it should be an adventure.
+                        So I built <span class="text-red-400 font-bold">FunErr</span>.
+                        It takes the 80+ most common mistakes we all make, identifies them instantly,
                         and then roasts you for making them.
                     </p>
                     <p class="text-white font-semibold">
@@ -210,28 +278,36 @@
                     </p>
                 </div>
             </div>
-            
+
             <!-- Features Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
+                <div
+                    class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
                     <i data-lucide="zap" class="text-yellow-400 w-8 h-8 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Instant Detection</h3>
-                    <p class="text-slate-400 text-sm">Identifies 80+ patterns including Promise rejections, missing modules, and syntax disasters.</p>
+                    <p class="text-slate-400 text-sm">Identifies 80+ patterns including Promise rejections, missing
+                        modules, and syntax disasters.</p>
                 </div>
-                <div class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
+                <div
+                    class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
                     <i data-lucide="skull" class="text-red-500 w-8 h-8 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Savage Roasts</h3>
-                    <p class="text-slate-400 text-sm">No more polite errors. Get told exactly how badly you messed up with custom insults.</p>
+                    <p class="text-slate-400 text-sm">No more polite errors. Get told exactly how badly you messed up
+                        with custom insults.</p>
                 </div>
-                <div class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
+                <div
+                    class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
                     <i data-lucide="terminal" class="text-green-400 w-8 h-8 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">CLI Ready</h3>
-                    <p class="text-slate-400 text-sm">Drop-in replacement for Node. Works with arguments, scripts, and production builds (if you dare).</p>
+                    <p class="text-slate-400 text-sm">Drop-in replacement for Node. Works with arguments, scripts, and
+                        production builds (if you dare).</p>
                 </div>
-                <div class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
+                <div
+                    class="p-6 bg-slate-800/50 border border-slate-700 rounded-xl hover:border-red-500/50 transition duration-300">
                     <i data-lucide="heart-crack" class="text-pink-500 w-8 h-8 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Real Fixes</h3>
-                    <p class="text-slate-400 text-sm">We insult you first, but we actually help you fix the code second. We aren't monsters.</p>
+                    <p class="text-slate-400 text-sm">We insult you first, but we actually help you fix the code second.
+                        We aren't monsters.</p>
                 </div>
             </div>
         </div>
@@ -241,20 +317,23 @@
     <footer class="border-t border-slate-800 bg-black py-12 text-center relative z-10">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold mb-6">Ready to cry?</h2>
-            
+
             <div class="mb-8">
-                 <a href="https://www.npmjs.com/package/fun-error" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-red-600/30">
+                <a href="https://www.npmjs.com/package/fun-error" target="_blank"
+                    class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-red-600/30">
                     Get FunErr Now
                 </a>
             </div>
 
             <!-- Social Links -->
             <div class="flex justify-center gap-6 mb-8">
-                <a href="https://www.npmjs.com/package/fun-error" target="_blank" class="text-slate-400 hover:text-red-500 transition-colors flex items-center gap-2 group">
+                <a href="https://www.npmjs.com/package/fun-error" target="_blank"
+                    class="text-slate-400 hover:text-red-500 transition-colors flex items-center gap-2 group">
                     <i data-lucide="box" class="w-5 h-5 group-hover:animate-bounce"></i>
                     <span class="text-sm">NPM</span>
                 </a>
-                <a href="https://github.com/mohdyaseen-ind/fun-error" target="_blank" class="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group">
+                <a href="https://github.com/mohdyaseen-ind/fun-error" target="_blank"
+                    class="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group">
                     <i data-lucide="github" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
                     <span class="text-sm">GitHub</span>
                 </a>
@@ -275,24 +354,24 @@
             const command = "npm i -g fun-error";
             const tooltip = document.getElementById('copy-tooltip');
             const icon = document.getElementById('copy-icon');
-            
+
             // Create a temporary textarea to handle the copy
             const textArea = document.createElement("textarea");
             textArea.value = command;
             document.body.appendChild(textArea);
             textArea.select();
-            
+
             try {
                 document.execCommand('copy');
-                
+
                 // Visual Feedback
                 tooltip.classList.remove('opacity-0');
                 tooltip.innerText = "Copied!";
-                
+
                 // Change icon temporarily
                 // We can't easily change lucide icon SVG content directly without re-rendering, 
                 // so we'll just stick to the tooltip for feedback.
-                
+
                 setTimeout(() => {
                     tooltip.classList.add('opacity-0');
                     setTimeout(() => tooltip.innerText = "Copy", 200);
@@ -302,9 +381,10 @@
                 tooltip.innerText = "Error";
                 tooltip.classList.remove('opacity-0');
             }
-            
+
             document.body.removeChild(textArea);
         }
     </script>
 </body>
+
 </html>

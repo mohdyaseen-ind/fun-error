@@ -1,0 +1,125 @@
+User-agent: *
+Disallow: /private/
+Disallow: /cdn-cgi/
+Allow: /
+
+# ── Traditional Search Engines ──────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: Qwantify
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+# ── AI / Generative Engine Crawlers ─────────────────────────────────────────
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google AI (Gemini, AI Overviews)
+User-agent: Google-Extended
+Allow: /
+User-agent: Googlebot-Extended
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (training data)
+User-agent: CCBot
+Allow: /
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Cohere AI
+User-agent: Cohere-ai
+Allow: /
+
+# ByteDance / Bytespider
+User-agent: Bytespider
+Allow: /
+
+# xAI / Grok
+User-agent: xAI
+Allow: /
+User-agent: Grok
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Diffbot (structured data extraction)
+User-agent: Diffbot
+Allow: /
+
+# Webz.io / Omgili
+User-agent: omgilibot
+Allow: /
+User-agent: omgili
+Allow: /
+
+# Neeva
+User-agent: Neevabot
+Allow: /
+
+# Timpi
+User-agent: Timpibot
+Allow: /
+
+Sitemap: https://mohdyaseen-ind.github.io/fun-error/sitemap.xml

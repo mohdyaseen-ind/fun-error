@@ -1,0 +1,69 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://mohdyaseen-ind.github.io/fun-error/#software",
+      "name": "FunErr",
+      "alternateName": "fun-error",
+      "description": "An intelligent Node.js error wrapper that roasts your code while actually helping you fix bugs. It detects 80+ common error patterns and provides SAVAGE debugging hints.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux, macOS, Windows",
+      "downloadUrl": "https://www.npmjs.com/package/fun-error",
+      "url": "https://mohdyaseen-ind.github.io/fun-error/",
+      "author": {
+        "@type": "Person",
+        "name": "Mohammed Yaseen",
+        "email": "mohammedyaseen.ind@gmail.com",
+        "url": "https://github.com/mohdyaseen-ind"
+      },
+      "license": "https://opensource.org/licenses/MIT",
+      "softwareVersion": "1.0.12",
+      "keywords": "node.js, error handling, debugging, developer tools, cli, funny errors",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Detects 80+ common Node.js errors",
+        "Explains what actually broke",
+        "Shows you how to fix it",
+        "Roasts your code in a helpful way",
+        "Color-coded terminal output"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://mohdyaseen-ind.github.io/fun-error/#sourcecode",
+      "name": "FunErr Source Code",
+      "codeRepository": "https://github.com/mohdyaseen-ind/fun-error",
+      "programmingLanguage": {
+        "@type": "ComputerLanguage",
+        "name": "JavaScript"
+      },
+      "runtimePlatform": "Node.js",
+      "author": {
+        "@id": "https://mohdyaseen-ind.github.io/fun-error/#author"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mohdyaseen-ind.github.io/fun-error/#webpage",
+      "url": "https://mohdyaseen-ind.github.io/fun-error/",
+      "name": "FunErr - Emotional Damage for Your Code",
+      "description": "FunErr turns confusing Node.js errors into clear, helpful messages with a savage roast.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mohdyaseen-ind.github.io/fun-error/"
+          }
+        ]
+      }
+    }
+  ]
+}
