@@ -31,6 +31,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
+    "degit": "^2.8.4",
     "fun-error": "^1.0.1"
   }
 }
